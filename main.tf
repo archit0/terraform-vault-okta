@@ -21,7 +21,7 @@ resource "vault_jwt_auth_backend_role" "okta_role" {
     "${var.vault_addr}/ui/vault/auth/${vault_jwt_auth_backend.okta_oidc.path}/oidc/callback",
     
     # This is for logging in with the CLI if you want.
-    "http://localhost:${var.cli_port}/oidc/callback",
+    var.auth_redirect,
   ]
 
   user_claim            = "email"
