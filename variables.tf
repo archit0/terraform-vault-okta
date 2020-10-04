@@ -46,3 +46,9 @@ variable "cli_port" {
   description = "Port to open locally to login with the CLI"
   default = 8250
 }
+
+variable "auth_redirect" {
+  type = string
+  description = "Port to open locally to login with the CLI"
+  default = "http://localhost:8250/oidc/callback",
+}
